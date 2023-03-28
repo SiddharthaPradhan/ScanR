@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <files-path
+        name="thumbnails"
+        path="scanr_thumbnails/">
+    </files-path>
+    <files-path
+        name="notes"
+        path="scanr_notes/">
+    </files-path>
+    <files-path
+        name="categories"
+        path="scanr_categories/">
+    </files-path>
+</paths>

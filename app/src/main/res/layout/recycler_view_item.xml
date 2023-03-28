@@ -1,0 +1,44 @@
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/tea_green"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    android:layout_marginTop="15dp"
+    app:rippleColor="@color/pale_spring_bud"
+    app:cardCornerRadius="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="8dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="Thumbnail"/>
+
+        <TextView
+            android:id="@+id/note_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:textColor="@color/kombu_green_darker"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/thumbnail"
+            android:gravity="center"
+            android:textAlignment="gravity"/>
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
+

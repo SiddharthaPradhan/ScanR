@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/Theme.ScanR">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerForBlur"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/appBarContainer">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="ScanR"
+                app:menu="@menu/top_app_bar"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                />
+            </com.google.android.material.appbar.AppBarLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+        <HorizontalScrollView
+            android:id="@+id/chipGroupContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appBarContainer">
+
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                app:singleLine="true"
+                android:gravity="center"
+                android:overScrollMode="ifContentScrolls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                app:singleSelection="true"
+                app:selectionRequired="true"
+                app:chipSpacingHorizontal="15dp"
+                android:layout_gravity="center"
+                style="@style/Widget.ScanR.Chip">
+
+    <!--            <com.google.android.material.chip.Chip-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:minWidth="60dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:textAlignment="center"-->
+    <!--                android:checkable="true"-->
+    <!--                style="@style/Widget.ScanR.Chip"-->
+    <!--                app:chipBackgroundColor="@color/chip_selected_color"-->
+    <!--                android:layout_marginEnd="30dp"-->
+    <!--                android:text="Add category"/>-->
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:minWidth="60dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:checkable="true"
+                    android:checked="true"
+                    style="@style/Widget.ScanR.Chip"
+                    app:chipBackgroundColor="@color/chip_selected_color"
+                    android:text="All"/>
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:minWidth="60dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:checkable="true"
+                    style="@style/Widget.ScanR.Chip"
+                    app:chipBackgroundColor="@color/chip_selected_color"
+                    android:text="Personal"/>
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:minWidth="60dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:checkable="true"
+                    style="@style/Widget.ScanR.Chip"
+                    app:chipBackgroundColor="@color/chip_selected_color"
+                    android:text="Work"/>
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:minWidth="60dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:checkable="true"
+                    style="@style/Widget.ScanR.Chip"
+                    app:chipBackgroundColor="@color/chip_selected_color"
+                    android:text="School"/>
+
+
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/searchResultList"
+            android:scrollbars="vertical"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            app:layout_constraintTop_toBottomOf="@id/chipGroupContainer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="10dp"
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="7dp">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/add_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Import photo"
+            app:icon="@drawable/ic_add"
+            android:gravity="end"
+            android:onClick="handleFabClick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_gallery_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:fabSize="normal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/add_fab"
+            app:layout_constraintEnd_toEndOf="@+id/add_fab"
+            app:srcCompat="@drawable/ic_gallery"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/add_gallery_action_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Import from gallery"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/add_gallery_fab"
+            app:layout_constraintEnd_toStartOf="@+id/add_gallery_fab"
+            app:layout_constraintTop_toTopOf="@+id/add_gallery_fab" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_camera_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:fabSize="normal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/add_gallery_fab"
+            app:layout_constraintEnd_toEndOf="@+id/add_gallery_fab"
+            app:layout_constraintStart_toStartOf="@+id/add_gallery_fab"
+            app:srcCompat="@drawable/ic_camera"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/add_camera_action_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Take a picture"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/add_camera_fab"
+            app:layout_constraintEnd_toStartOf="@+id/add_camera_fab"
+            app:layout_constraintTop_toTopOf="@+id/add_camera_fab" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/mainBlurFL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
